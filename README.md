@@ -209,6 +209,8 @@ with open('../config.yaml', 'w') as file:
 Users can utilize the following guide as a quick start:
 
 ```python
+import time
+  
 import streamlit as st
 import streamlit_authenticator as stauth
 
