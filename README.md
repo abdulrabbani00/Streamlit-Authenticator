@@ -236,7 +236,8 @@ def forgot(_input: str):
 
 authenticator.full_tab(forgot, forgot, True)
 while "authentication_status" not in st.session_state:
-    time.sleep(0.5)
+    with st.spinner("Loading..."):
+        time.sleep(0.5)
 
 deta_store.put_cred_and_preauthorized(credentials, preauthorized)
 
