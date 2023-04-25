@@ -212,6 +212,8 @@ with open('../config.yaml', 'w') as file:
 Users can utilize the following guide as a quick start:
 
 ```python
+import time
+  
 import streamlit as st
 import streamlit_authenticator as stauth
 
@@ -237,7 +239,8 @@ def forgot(_input: str):
 
 authenticator.full_tab(forgot, forgot, True)
 while "authentication_status" not in st.session_state:
-    time.sleep(0.5)
+    with st.spinner("Loading..."):
+        time.sleep(0.5)
 
 deta_store.put_cred_and_preauthorized(credentials, preauthorized)
 
